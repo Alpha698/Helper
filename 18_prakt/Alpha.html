@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	    <meta charset="utf-8">
+	    <title>Практическое_занятие_18</title>
+     	<link href="style.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+
+<form id="registration">
+  <fieldset>   										<!--Первая форма    ctrl+y-->
+    <legend>Форма регистрации</legend>
+
+        <table class="alignment">
+    		<tr>
+   				<td> <label for=name>ФИО</label> </td>
+   				<td> <input id="name" name=name type=text required> </td>
+  			</tr>
+    		<tr>
+   				<td> <label for=email>Email</label> </td>
+   				<td> <input id="email" name=email type=email required> </td>
+   			</tr>
+  			<tr>
+   				<td> <label for=phone>Номер телефона</label> </td>
+   			<!--	<td> <input id="phone" name=phone type=tel pattern="(d{3,4}) d{2,3}-d{2}-d{2}" required> </td> -->
+   				   <td>  <p><input type="tel" pattern="2-[0-9]{3}-[0-9]{3}"></td>
+  			</tr>
+  			<tr>
+   				<td><label for=dateofbirth>Дата рождения</label></td>
+   				<td><input id="dateofbirth" name=dateofbirth type="date" required></td>
+  			</tr>
+    	</table>   
+  </fieldset>
+  
+  <fieldset>													<!--Вторая форма-->
+  <legend>Параметры доставки</legend>
+  <table>
+   <tr>
+    <td><label for=address>Адрес</label></td>
+    <td><textarea id="address" name=address rows=5 ></textarea></td>
+   </tr>
+   <tr>
+    <td><label for=postcode>Почтовый индекс</label></td>
+    <td><input id="postcode" name=postcode type=text ></td>
+   </tr>
+   
+  </table>
+ </fieldset>
+
+ <fieldset>															<!--Третья форма  type="checkbox" -->
+ <legend>Предпочитаемый способ получения уведомлений</legend>     
+  <table>
+    <tr>
+      <td><input id="emailmessage" name=emailmessage type=radio></td>
+      <td><label for=emailmessage>По Email</label></td>
+    </tr>
+    <tr>
+      <td><input id="phonemessage" name=phonemessage type=radio></td>
+      <td><label for=phonemessage>По телефону</label></td>
+    </tr>
+    <tr>
+      <td><input id="nomessagee" name=nomessage type=radio></td>
+      <td><label for=nomessage>Не уведомлять меня</label></td>
+    </tr>
+  </table>
+ </fieldset>
+
+ <fieldset>
+ <button type="submit">Отправить данные</button>
+ </fieldset>
+
+
+</form>
+
+
+</body>
+</html>

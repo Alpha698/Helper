@@ -1,0 +1,48 @@
+unit UnitCli;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ScktComp, StdCtrls;
+
+type
+  TForm3 = class(TForm)
+    ListBox1: TListBox;
+    Edit1: TEdit;
+    Connect: TButton;
+    Send: TButton;
+    Close: TButton;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+    procedure CliSockRead(Sender: TObject; Socket: TCustomWinSocket);
+  public
+    { Public declarations }
+  end;
+
+var
+  Form3: TForm3;
+
+implementation
+
+{$R *.dfm}
+  var
+    ClientSocket1: TClientSocket;
+
+procedure TForm3.CliSockRead(Sender: TObject; Socket: TCustomWinSocket);
+begin
+  ListBoxl.Items.Add(Socket.ReceiveText);
+end;
+
+procedure TForm3.FormCreate(Sender: TObject);
+begin
+  ClientSocket1:= TClientSocket.Create(self);
+  ClientSocket1.Address:='127.0.0.1';
+  ClientSocket1.Port:= 777;
+  ClientSocket1.OnRead:= CliSockRead;
+end;
+
+
+
+end.

@@ -1,0 +1,29 @@
+unit UnitCli;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ScktComp, StdCtrls;
+
+type
+  TForm3 = class(TForm)
+    ListBox1: TListBox;
+    Edit1: TEdit;
+    Connect: TButton;
+    Send: TButton;
+    Close: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form3: TForm3;
+
+implementation
+
+{$R *.dfm}
+
+end.
