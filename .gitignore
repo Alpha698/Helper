@@ -1,0 +1,17 @@
+[Tt]emp/
+[Oo]bj/
+[Bb]uild
+[Ll]ibrary/
+[Ll]ogs/
+[Aa]ssetBundles/
+[Ss]creenshots/
+[Ll]fs/
+[Hh]ooks
+sysinfo.txt
+*.stackdump
+[Ee]xported[Oo]bj/
+.vs/
+/*.sln*
+
+
+
