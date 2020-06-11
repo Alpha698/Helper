@@ -9,7 +9,6 @@ public class MainNotesLogic : MonoBehaviour
     [Header("Buttons in Main Menu")]
     public Button clearNotes;
     public Button saveNotes;
-    public Button openNotes;
     public Button addNotes;
     [Header("Text Area for write")]
     public TMP_InputField InputFieldforNotes;
@@ -24,7 +23,6 @@ public class MainNotesLogic : MonoBehaviour
   
         clearNotes.onClick.AddListener(KillAmAll);
         saveNotes.onClick.AddListener(GodsSave);
-        openNotes.onClick.AddListener(OpenNotesArea);
         addNotes.onClick.AddListener(CreateNotes);
 
         InputFieldforNotes.text = AllSeeing();
