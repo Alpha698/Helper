@@ -9,6 +9,8 @@ public class MainNotesLogic : MonoBehaviour
     [Header("Buttons in Main Menu")]
     public Button clearNotes;
     public Button saveNotes;
+    public Button openNotes;
+    public Button addNotes;
     [Header("Text Area for write")]
     public TMP_InputField InputFieldforNotes;
 
@@ -22,7 +24,9 @@ public class MainNotesLogic : MonoBehaviour
   
         clearNotes.onClick.AddListener(KillAmAll);
         saveNotes.onClick.AddListener(GodsSave);
-        
+        openNotes.onClick.AddListener(OpenNotesArea);
+        addNotes.onClick.AddListener(CreateNotes);
+
         InputFieldforNotes.text = AllSeeing();
     }
 
@@ -39,6 +43,18 @@ public class MainNotesLogic : MonoBehaviour
         StartCoroutine(ViewInfo("I save all your shit"));
     }
 
+    private void OpenNotesArea()
+    {
+        Debug.Log("OpenNotesArea");
+        RectTransform rt = InputFieldforNotes.GetComponent<RectTransform>();
+        rt.sizeDelta = new Vector2(rt.sizeDelta.x, Screen.height/5);
+
+
+    }
+    private void CreateNotes()
+    {
+        Debug.Log("Create");
+    }
     private string AllSeeing()
     {         
         return PlayerPrefs.GetString("Notes" + number, "_");
