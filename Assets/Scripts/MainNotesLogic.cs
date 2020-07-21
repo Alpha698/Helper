@@ -6,14 +6,17 @@ using TMPro;
 
 public class MainNotesLogic : MonoBehaviour
 {
-    [Header("Buttons in Main Menu")]
+    [Header("Buttons in Main Window")]
     public Button clearNotes;
     public Button saveNotes;
-    public Button addNotes;
+    public Button menuButton;
+    public TMP_Text infoTitle;
     [Header("Text Area for write")]
     public TMP_InputField InputFieldforNotes;
+    [Header("Main Menu")]
+    public GameObject panelMenu;
 
-    public TMP_Text infoTitle;
+
 
     private int number = 1;
     // Start is called before the first frame update
@@ -23,7 +26,7 @@ public class MainNotesLogic : MonoBehaviour
   
         clearNotes.onClick.AddListener(KillAmAll);
         saveNotes.onClick.AddListener(GodsSave);
-        addNotes.onClick.AddListener(CreateNotes);
+        menuButton.onClick.AddListener(OpenMenu);
 
         InputFieldforNotes.text = AllSeeing();
     }
@@ -49,9 +52,10 @@ public class MainNotesLogic : MonoBehaviour
 
 
     }
-    private void CreateNotes()
+    private void OpenMenu()
     {
-        Debug.Log("Create");
+
+        Debug.Log("Open");
     }
     private string AllSeeing()
     {         
